@@ -23,3 +23,11 @@ body {
   box-shadow: 0 12px 30px rgba(0,0,0,0.18);
   overflow: hidden;
 }
+
+/* Header */
+header {
+  background: #4a69bd;
+  color: #fff;
+  text-align: center;
+  padding: 22px 18px;
+}
