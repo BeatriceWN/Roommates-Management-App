@@ -3,73 +3,73 @@
     {
       "id": "1",
       "name": "Wash dishes",
-      "assignedTo": "John",
+      "assignedTo": "Beatrice Wambui",
       "completed": false
     },
     {
       "id": "2",
       "name": "Vacuum living room",
-      "assignedTo": "Jane",
+      "assignedTo": "Praxcedes Kabeya",
       "completed": true
     },
     {
       "id": "3",
       "name": "Take out trash",
-      "assignedTo": "Sarah",
+      "assignedTo": "Laban Mugutu",
       "completed": false
     },
     {
       "id": "4",
       "name": "Clean the kitchen",
-      "assignedTo": "Beatrice",
+      "assignedTo": "Victorious Njoroge",
       "completed": false
     },
     {
       "id": "5",
       "name": "Mop bathroom floor",
-      "assignedTo": "Mike",
+      "assignedTo": "Nancy Adelice",
       "completed": false
     },
     {
       "id": "6",
       "name": "Organize living room",
-      "assignedTo": "Emma",
+      "assignedTo": "Beatrice Wambui",
       "completed": false
     },
     {
       "id": "7",
       "name": "Clean windows",
-      "assignedTo": "John",
+      "assignedTo": "Praxcedes Kabeya",
       "completed": false
     },
     {
       "id": "8",
       "name": "Laundry",
-      "assignedTo": "Jane",
+      "assignedTo": "Laban Mugutu",
       "completed": true
     },
     {
       "id": "9",
       "name": "Dust furniture",
-      "assignedTo": "Sarah",
+      "assignedTo": "Victorious Njoroge",
       "completed": false
     },
     {
       "id": "10",
       "name": "Clean refrigerator",
-      "assignedTo": "Beatrice",
+      "assignedTo": "Nancy Adelice",
       "completed": false
     },
     {
       "id": "11",
       "name": "Sweep balcony",
-      "assignedTo": "Mike",
+      "assignedTo": "Beatrice Wambui",
       "completed": false
     },
     {
       "id": "12",
       "name": "Water plants",
-      "assignedTo": "Emma",
+      "assignedTo": "Praxcedes Kabeya",
       "completed": false
     }
   ],
@@ -111,32 +111,32 @@
     },
     {
       "id": "6",
-      "name": "Groceries (Sarah's share)",
+      "name": "Groceries (Laban Mugutu's share)",
       "amount": 75,
       "dueDate": "2025-03-20",
       "paid": false,
       "splitBill": true,
-      "assignedTo": "Sarah",
+      "assignedTo": "Laban Mugutu",
       "originalBill": "Groceries"
     },
     {
       "id": "7",
-      "name": "Groceries (John's share)",
+      "name": "Groceries (Beatrice Wambui's share)",
       "amount": 75,
       "dueDate": "2025-03-20",
       "paid": true,
       "splitBill": true,
-      "assignedTo": "John",
+      "assignedTo": "Beatrice Wambui",
       "originalBill": "Groceries"
     },
     {
       "id": "8",
-      "name": "Groceries (Jane's share)",
+      "name": "Groceries (Praxcedes Kabeya's share)",
       "amount": 75,
       "dueDate": "2025-03-20",
       "paid": false,
       "splitBill": true,
-      "assignedTo": "Jane",
+      "assignedTo": "Praxcedes Kabeya",
       "originalBill": "Groceries"
     },
     {
@@ -174,7 +174,7 @@
       "title": "Grocery shopping",
       "date": "2025-03-12",
       "time": "14:00",
-      "description": "Weekly grocery run - Sarah's turn"
+      "description": "Weekly grocery run - Laban Mugutu's turn"
     },
     {
       "id": "5",
@@ -215,8 +215,8 @@
   "roommates": [
     {
       "id": "1",
-      "name": "John Smith",
-      "email": "john.smith@email.com",
+      "name": "Beatrice Wambui",
+      "email": "beatrice.wambui@email.com",
       "phone": "(555) 123-4567",
       "room": "Master Bedroom",
       "moveInDate": "2024-09-01",
@@ -224,8 +224,8 @@
     },
     {
       "id": "2",
-      "name": "Jane Doe",
-      "email": "jane.doe@email.com",
+      "name": "Praxcedes Kabeya",
+      "email": "praxcedes.kabeya@email.com",
       "phone": "(555) 987-6543",
       "room": "Room A",
       "moveInDate": "2024-10-15",
@@ -233,8 +233,8 @@
     },
     {
       "id": "3",
-      "name": "Sarah Johnson",
-      "email": "sarah.johnson@email.com",
+      "name": "Laban Mugutu",
+      "email": "laban.mugutu@email.com",
       "phone": "(555) 456-7890",
       "room": "Room B",
       "moveInDate": "2024-11-01",
@@ -242,8 +242,8 @@
     },
     {
       "id": "4",
-      "name": "Beatrice Williams",
-      "email": "beatrice.williams@email.com",
+      "name": "Victorious Njoroge",
+      "email": "victorious.njoroge@email.com",
       "phone": "(555) 321-6547",
       "room": "Room C",
       "moveInDate": "2024-12-01",
@@ -251,21 +251,12 @@
     },
     {
       "id": "5",
-      "name": "Mike Chen",
-      "email": "mike.chen@email.com",
+      "name": "Nancy Adelice",
+      "email": "nancy.adelice@email.com",
       "phone": "(555) 789-0123",
       "room": "Room D",
       "moveInDate": "2025-01-15",
       "joinedDate": "2025-01-15"
-    },
-    {
-      "id": "6",
-      "name": "Emma Davis",
-      "email": "emma.davis@email.com",
-      "phone": "(555) 654-3210",
-      "room": "Room E",
-      "moveInDate": "2025-02-01",
-      "joinedDate": "2025-02-01"
     }
   ]
 }
