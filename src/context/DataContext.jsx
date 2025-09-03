@@ -29,3 +29,5 @@ export function DataProvider({ children }) {
 
   const markBillPaid = (id) =>
     setBills(bills.map((b) => (b.id === id ? { ...b, paid: true } : b)));
+  const addEvent = (title, date) =>
+    setEvents([...events, { id: crypto.randomUUID(), title, date }]);
