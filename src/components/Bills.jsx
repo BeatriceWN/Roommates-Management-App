@@ -24,7 +24,11 @@ function Bills() {
       .then(res => res.json())
       .then(data => setBills([...bills, data]));
 
-   
+    setName("");
+    setAmount("");
+    setDueDate("");
+  };
+
   const markPaid = (id, paid) => {
     fetch(`http://localhost:4000/bills/${id}`, {
       method: "PATCH",
