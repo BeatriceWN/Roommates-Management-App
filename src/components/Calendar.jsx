@@ -22,4 +22,32 @@ function Calendar() {
 
     setTitle("");
     setDate("");
-  };
+  }; return (
+    <div>
+      <h2>📅 Calendar</h2>
+      <form onSubmit={addEvent}>
+        <input
+          type="text"
+          placeholder="Event title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          required
+        /><input
+          type="date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+          required
+        />
+        <button type="submit">Add Event</button>
+      </form> <ul>
+        {events.map(event => (
+          <li key={event.id}>
+            {event.title} — {event.date}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default Calendar;
