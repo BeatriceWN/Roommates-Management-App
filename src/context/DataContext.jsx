@@ -19,3 +19,8 @@ export function DataProvider({ children }) {
   useEffect(() => localStorage.setItem("events", JSON.stringify(events)), [events]);
   useEffect(() => localStorage.setItem("roommates", JSON.stringify(roommates)), [roommates]);
    // CRUD functions
+    const addChore = (name, assignedTo) =>
+    setChores([...chores, { id: crypto.randomUUID(), name, assignedTo, completed: false }]);
+
+  const markChoreComplete = (id) =>
+    setChores(chores.map((c) => (c.id === id ? { ...c, completed: true } : c)));
