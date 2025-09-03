@@ -28,3 +28,16 @@ function Chores() {
     setName("");
     setAssignedTo("");
   };
+
+   // Mark complete
+  const toggleComplete = (id, completed) => {
+    fetch(http://localhost:4000/chores/${id}, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ completed: !completed })
+    })
+      .then(res => res.json())
+      .then(updated =>
+        setChores(chores.map(chore => (chore.id === id ? updated : chore)))
+      );
+  };
