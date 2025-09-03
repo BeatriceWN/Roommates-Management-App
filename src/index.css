@@ -77,3 +77,11 @@ header h1 { font-size: 1.9rem; letter-spacing: 0.2px; }
   gap: 8px;
   transition: background .18s ease, color .18s ease, transform .06s ease;
 }
+
+.tab-btn i { font-size: 0.98rem; }
+.tab-btn:hover { transform: translateY(-1px); }
+.tab-btn.active {
+  background: #4a69bd;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(74,105,189,0.18);
+}
