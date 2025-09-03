@@ -43,7 +43,7 @@ function Bills() {
 
   return (
     <div>
-      <h2>💰 Bills</h2>
+      <h2>Bills</h2>
       <form onSubmit={addBill}>
         <input
           type="text"
@@ -73,7 +73,7 @@ function Bills() {
           <li key={bill.id}>
             {bill.name} — ${bill.amount} (Due: {bill.dueDate})  
             <button onClick={() => markPaid(bill.id, bill.paid)}>
-              {bill.paid ? "✅ Paid" : "❌ Unpaid"}
+              {bill.paid ? "Paid" : "Unpaid"}
             </button>
           </li>
         ))}
