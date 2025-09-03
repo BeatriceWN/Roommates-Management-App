@@ -1,0 +1,58 @@
+{
+  "chores": [
+    {
+      "id": "1",
+      "name": "Wash dishes",
+      "assignedTo": "John",
+      "completed": false
+    },
+    {
+      "id": "2",
+      "name": "Vacuum living room",
+      "assignedTo": "Jane",
+      "completed": true
+    }
+  ],
+  "bills": [
+    {
+      "id": "1",
+      "name": "Electricity",
+      "amount": 50,
+      "dueDate": "2025-09-10",
+      "paid": false
+    },
+    {
+      "id": "2",
+      "name": "Internet",
+      "amount": 30,
+      "dueDate": "2025-09-05",
+      "paid": true
+    }
+  ],
+  "events": [
+    {
+      "id": "1",
+      "title": "House meeting",
+      "date": "2025-09-15"
+    },
+    {
+      "id": "2",
+      "title": "Rent due",
+      "date": "2025-09-01"
+    }
+  ],
+  "roommates": [
+    {
+      "id": "1",
+      "name": "John",
+      "email": "john@example.com",
+      "phone": "123-456-7890"
+    },
+    {
+      "id": "2",
+      "name": "Jane",
+      "email": "jane@example.com",
+      "phone": "098-765-4321"
+    }
+  ]
+}
