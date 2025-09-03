@@ -30,3 +30,8 @@ export default function Bills() {
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
         />
+           <input
+          type="date"
+          value={dueDate}
+          onChange={(e) => setDueDate(e.target.value)}
+        />
