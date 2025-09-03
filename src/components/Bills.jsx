@@ -24,3 +24,9 @@ export default function Bills() {
            value={name}
           onChange={(e) => setName(e.target.value)}
         />
+        <input
+          type="number"
+          placeholder="Amount"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+        />
