@@ -1,51 +1,41 @@
-import { useData } from "../context/DataContext";
+import SummaryCards from "./dashboard/SummaryCards";
+import RecentChores from "./dashboard/RecentChores";
+import RecentBills from "./dashboard/RecentBills";
+import UpcomingEvents from "./dashboard/UpcomingEvents";
+import RoommatesList from "./dashboard/RoommatesList";
+import Notifications from "./dashboard/Notifications";
 
 export default function Dashboard() {
-  const { chores, bills, events, roommates, markChoreComplete, markBillPaid } = useData();
-
-  const completedChores = chores.filter(c => c.completed).length;
-  const pendingBills = bills.filter(b => !b.paid).length;
-  const upcomingEvents = events.filter(e => new Date(e.date) >= new Date()).length;
-
-
-  
   return (
-    <div className="tab-content">
-      <h2>Dashboard</h2>
-      <div className="stats">
-        <p>Chores: {completedChores}/{chores.length}</p>
-        <p>Bills Pending: {pendingBills}</p>
-        <p>Roommates: {roommates.length}</p>
-        <p>Upcoming Events: {upcomingEvents}</p>
+    <div className="dashboard-container">
+      <div className="dashboard-header">
+        <h2>Dashboard Overview</h2>
+        <p className="dashboard-subtitle">Keep track of your shared living space</p>
       </div>
-
-
-
-<h3>Recent Chores</h3>
-  <ul>
-    {chores.slice(0, 5).map(chore => (
-      <li key={chore.id}>
-        <strong>{chore.name}</strong> - {chore.assignedTo}
-        {!chore.completed && (
-          <button onClick={() => markChoreComplete(chore.id)}>Mark Complete</button>
-        )}
-      </li>
-    ))}
-  </ul>
-
-  <h3>Upcoming Bills</h3>
-  <ul>
-    {bills.slice(0, 5).map(bill => (
-      <li key={bill.id}>
-        <strong>{bill.name}</strong> - ${bill.amount} (Due {bill.dueDate})
-        {!bill.paid && (
-          <button onClick={() => markBillPaid(bill.id)}>Mark Paid</button>
-        )}
-      </li>
-  
-    ))}
-  </ul>
-</div>
+      
+      <SummaryCards />
+      
+      <div className="dashboard-grid">
+        <div className="dashboard-section">
+          <RecentChores />
+        </div>
+        
+        <div className="dashboard-section">
+          <RecentBills />
+        </div>
+        
+        <div className="dashboard-section">
+          <UpcomingEvents />
+        </div>
+        
+        <div className="dashboard-section">
+          <Notifications />
+        </div>
+      </div>
+      
+      <div className="dashboard-footer">
+        <RoommatesList />
+      </div>
+    </div>
   );
 }
-
