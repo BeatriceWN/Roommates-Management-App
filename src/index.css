@@ -144,3 +144,34 @@ ul { list-style: none; padding-left: 0; margin: 0; }
   gap: 12px;
   box-shadow: 0 4px 12px rgba(34,41,64,0.03);
 }
+
+.chore-item strong, .bill-item strong, .event-item strong { display:block; color:#222; }
+.text-muted { color: #6b7280; font-size: 0.9rem; margin-top: 6px; }
+
+/* Roommates grid */
+.roommate-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.roommate-card {
+  background: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(34,41,64,0.03);
+}
+.roommate-card h3 { margin-top: 8px; font-size: 1rem; }
+.roommate-card p { color: #555; font-size: 0.9rem; margin-top: 4px; }
+
+/* Buttons */
+.btn {
+  background: #4a69bd;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform .06s ease, box-shadow .12s ease;
+}
