@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import InAppNotification from "./InAppNotification";
 
 function Calendar() {
   const [events, setEvents] = useState([]);
@@ -8,6 +9,7 @@ function Calendar() {
   const [description, setDescription] = useState("");
   const [loading, setLoading] = useState(false);
   const [viewMode, setViewMode] = useState('list'); // 'list' or 'calendar'
+  const [notification, setNotification] = useState(null);
 
   useEffect(() => {
     setLoading(true);
@@ -45,18 +47,48 @@ function Calendar() {
         setTime("");
         setDescription("");
         setLoading(false);
+        
+        // Show success notification
+        setNotification({
+          type: 'event',
+          title: 'Event Added Successfully!',
+          message: `"${data.title}" has been scheduled for ${formatDate(data.date)}`
+        });
       })
-      .catch(() => setLoading(false));
+      .catch(() => {
+        setLoading(false);
+        setNotification({
+          type: 'error',
+          title: 'Failed to Add Event',
+          message: 'Please try again later'
+        });
+      });
   };
 
   const deleteEvent = (id) => {
     if (!window.confirm("Are you sure you want to delete this event?")) return;
+    
+    const eventToDelete = events.find(event => event.id === id);
     
     fetch(`http://localhost:3000/events/${id}`, {
       method: "DELETE",
     })
       .then(() => {
         setEvents(events.filter((event) => event.id !== id));
+        
+        // Show delete notification
+        setNotification({
+          type: 'delete',
+          title: 'Event Deleted',
+          message: `"${eventToDelete.title}" has been removed from your calendar`
+        });
+      })
+      .catch(() => {
+        setNotification({
+          type: 'error',
+          title: 'Failed to Delete Event',
+          message: 'Please try again later'
+        });
       });
   };
 
@@ -107,6 +139,10 @@ function Calendar() {
 
   return (
     <div className="calendar-container">
+      <InAppNotification 
+        notification={notification} 
+        onClose={() => setNotification(null)} 
+      />
       {/* Header Section */}
       <div className="page-header">
         <div className="header-content">

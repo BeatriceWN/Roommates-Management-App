@@ -1,58 +1,271 @@
 {
   "chores": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Wash dishes",
       "assignedTo": "John",
       "completed": false
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Vacuum living room",
       "assignedTo": "Jane",
       "completed": true
+    },
+    {
+      "id": "3",
+      "name": "Take out trash",
+      "assignedTo": "Sarah",
+      "completed": false
+    },
+    {
+      "id": "4",
+      "name": "Clean the kitchen",
+      "assignedTo": "Beatrice",
+      "completed": false
+    },
+    {
+      "id": "5",
+      "name": "Mop bathroom floor",
+      "assignedTo": "Mike",
+      "completed": false
+    },
+    {
+      "id": "6",
+      "name": "Organize living room",
+      "assignedTo": "Emma",
+      "completed": false
+    },
+    {
+      "id": "7",
+      "name": "Clean windows",
+      "assignedTo": "John",
+      "completed": false
+    },
+    {
+      "id": "8",
+      "name": "Laundry",
+      "assignedTo": "Jane",
+      "completed": true
+    },
+    {
+      "id": "9",
+      "name": "Dust furniture",
+      "assignedTo": "Sarah",
+      "completed": false
+    },
+    {
+      "id": "10",
+      "name": "Clean refrigerator",
+      "assignedTo": "Beatrice",
+      "completed": false
+    },
+    {
+      "id": "11",
+      "name": "Sweep balcony",
+      "assignedTo": "Mike",
+      "completed": false
+    },
+    {
+      "id": "12",
+      "name": "Water plants",
+      "assignedTo": "Emma",
+      "completed": false
     }
   ],
   "bills": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Electricity",
-      "amount": 50,
-      "dueDate": "2025-09-10",
+      "amount": 150,
+      "dueDate": "2025-03-15",
       "paid": false
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Internet",
-      "amount": 30,
-      "dueDate": "2025-09-05",
+      "amount": 80,
+      "dueDate": "2025-03-05",
       "paid": true
+    },
+    {
+      "id": "3",
+      "name": "Water Bill",
+      "amount": 45,
+      "dueDate": "2025-03-08",
+      "paid": false
+    },
+    {
+      "id": "4",
+      "name": "Gas Bill",
+      "amount": 65,
+      "dueDate": "2025-03-12",
+      "paid": false
+    },
+    {
+      "id": "5",
+      "name": "Rent",
+      "amount": 2500,
+      "dueDate": "2025-03-01",
+      "paid": true
+    },
+    {
+      "id": "6",
+      "name": "Groceries (Sarah's share)",
+      "amount": 75,
+      "dueDate": "2025-03-20",
+      "paid": false,
+      "splitBill": true,
+      "assignedTo": "Sarah",
+      "originalBill": "Groceries"
+    },
+    {
+      "id": "7",
+      "name": "Groceries (John's share)",
+      "amount": 75,
+      "dueDate": "2025-03-20",
+      "paid": true,
+      "splitBill": true,
+      "assignedTo": "John",
+      "originalBill": "Groceries"
+    },
+    {
+      "id": "8",
+      "name": "Groceries (Jane's share)",
+      "amount": 75,
+      "dueDate": "2025-03-20",
+      "paid": false,
+      "splitBill": true,
+      "assignedTo": "Jane",
+      "originalBill": "Groceries"
+    },
+    {
+      "id": "9",
+      "name": "Netflix Subscription",
+      "amount": 15,
+      "dueDate": "2025-03-25",
+      "paid": true
+    },
+    {
+      "id": "10",
+      "name": "Cleaning Supplies",
+      "amount": 35,
+      "dueDate": "2025-03-18",
+      "paid": false
     }
   ],
   "events": [
     {
-      "id": 1,
+      "id": "1",
       "title": "House meeting",
-      "date": "2025-09-15"
+      "date": "2025-03-15",
+      "time": "19:00",
+      "description": "Monthly house meeting to discuss bills, chores, and any issues"
     },
     {
-      "id": 2,
-      "title": "Rent due",
-      "date": "2025-09-01"
+      "id": "3",
+      "title": "Deep cleaning day",
+      "date": "2025-03-22",
+      "time": "10:00",
+      "description": "Spring cleaning - everyone participates"
+    },
+    {
+      "id": "4",
+      "title": "Grocery shopping",
+      "date": "2025-03-12",
+      "time": "14:00",
+      "description": "Weekly grocery run - Sarah's turn"
+    },
+    {
+      "id": "5",
+      "title": "Maintenance visit",
+      "date": "2025-03-18",
+      "time": "09:00",
+      "description": "Landlord coming to fix the leaky faucet"
+    },
+    {
+      "id": "6",
+      "title": "Movie night",
+      "date": "2025-03-16",
+      "time": "20:00",
+      "description": "Weekly movie night in the living room"
+    },
+    {
+      "id": "7",
+      "title": "Internet installation",
+      "date": "2025-02-28",
+      "time": "13:00",
+      "description": "Technician visit for internet upgrade"
+    },
+    {
+      "id": "8",
+      "title": "House party",
+      "date": "2025-03-30",
+      "time": "19:00",
+      "description": "End of month celebration - invite friends!"
+    },
+    {
+      "id": "0ede",
+      "title": "Team Meeting",
+      "date": "2025-09-04",
+      "time": "20:00",
+      "description": "Finalise the requirements"
     }
   ],
   "roommates": [
     {
-      "id": 1,
-      "name": "John",
-      "email": "john@example.com",
-      "phone": "123-456-7890"
+      "id": "1",
+      "name": "John Smith",
+      "email": "john.smith@email.com",
+      "phone": "(555) 123-4567",
+      "room": "Master Bedroom",
+      "moveInDate": "2024-09-01",
+      "joinedDate": "2024-09-01"
     },
     {
-      "id": 2,
-      "name": "Jane",
-      "email": "jane@example.com",
-      "phone": "098-765-4321"
+      "id": "2",
+      "name": "Jane Doe",
+      "email": "jane.doe@email.com",
+      "phone": "(555) 987-6543",
+      "room": "Room A",
+      "moveInDate": "2024-10-15",
+      "joinedDate": "2024-10-15"
+    },
+    {
+      "id": "3",
+      "name": "Sarah Johnson",
+      "email": "sarah.johnson@email.com",
+      "phone": "(555) 456-7890",
+      "room": "Room B",
+      "moveInDate": "2024-11-01",
+      "joinedDate": "2024-11-01"
+    },
+    {
+      "id": "4",
+      "name": "Beatrice Williams",
+      "email": "beatrice.williams@email.com",
+      "phone": "(555) 321-6547",
+      "room": "Room C",
+      "moveInDate": "2024-12-01",
+      "joinedDate": "2024-12-01"
+    },
+    {
+      "id": "5",
+      "name": "Mike Chen",
+      "email": "mike.chen@email.com",
+      "phone": "(555) 789-0123",
+      "room": "Room D",
+      "moveInDate": "2025-01-15",
+      "joinedDate": "2025-01-15"
+    },
+    {
+      "id": "6",
+      "name": "Emma Davis",
+      "email": "emma.davis@email.com",
+      "phone": "(555) 654-3210",
+      "room": "Room E",
+      "moveInDate": "2025-02-01",
+      "joinedDate": "2025-02-01"
     }
   ]
 }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import notificationService from "../services/NotificationService";
+import InAppNotification from "./InAppNotification";
 
 function Bills() {
   const [bills, setBills] = useState([]);
@@ -10,6 +11,7 @@ function Bills() {
   const [splitBill, setSplitBill] = useState(false);
   const [selectedRoommates, setSelectedRoommates] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [notification, setNotification] = useState(null);
 
   useEffect(() => {
     setLoading(true);
@@ -36,10 +38,15 @@ function Bills() {
       // Create split bills
       const splitAmount = Number(amount) / selectedRoommates.length;
       const billPromises = selectedRoommates.map(roommateId => {
-        const roommate = roommates.find(r => r.id === roommateId);
+        const roommate = roommates.find(r => r.id == roommateId); // Use == for flexible comparison
+        if (!roommate) {
+          console.error(`Roommate with id ${roommateId} not found`);
+          return Promise.reject(`Roommate not found`);
+        }
+        
         const splitBillData = {
           name: `${name.trim()} (${roommate.name}'s share)`,
-          amount: splitAmount,
+          amount: parseFloat(splitAmount.toFixed(2)), // Round to 2 decimal places
           dueDate,
           paid: false,
           originalBill: name.trim(),
@@ -63,8 +70,23 @@ function Bills() {
           setSplitBill(false);
           setSelectedRoommates([]);
           setLoading(false);
+          
+          // Show success notification
+          setNotification({
+            type: 'success',
+            title: 'Bill Split Successfully!',
+            message: `${name.trim()} has been split among ${selectedRoommates.length} roommates (${formatCurrency(splitAmount)} each)`
+          });
         })
-        .catch(() => setLoading(false));
+        .catch((error) => {
+          console.error('Error splitting bill:', error);
+          setLoading(false);
+          setNotification({
+            type: 'error',
+            title: 'Failed to Split Bill',
+            message: 'Please try again later'
+          });
+        });
     } else {
       // Create regular bill
       const newBill = { 
@@ -87,16 +109,32 @@ function Bills() {
           setAmount("");
           setDueDate("");
           setLoading(false);
+          
+          // Show success notification
+          setNotification({
+            type: 'success',
+            title: 'Bill Added Successfully!',
+            message: `${data.name} (${formatCurrency(data.amount)}) has been added`
+          });
         })
-        .catch(() => setLoading(false));
+        .catch(() => {
+          setLoading(false);
+          setNotification({
+            type: 'error',
+            title: 'Failed to Add Bill',
+            message: 'Please try again later'
+          });
+        });
     }
   };
 
   const handleRoommateToggle = (roommateId) => {
+    // Convert to string for consistent comparison
+    const idStr = String(roommateId);
     setSelectedRoommates(prev => 
-      prev.includes(roommateId) 
-        ? prev.filter(id => id !== roommateId)
-        : [...prev, roommateId]
+      prev.includes(idStr) 
+        ? prev.filter(id => id !== idStr)
+        : [...prev, idStr]
     );
   };
 
@@ -176,6 +214,10 @@ function Bills() {
 
   return (
     <div className="bills-container">
+      <InAppNotification 
+        notification={notification} 
+        onClose={() => setNotification(null)} 
+      />
       {/* Header Section */}
       <div className="page-header">
         <div className="header-content">
@@ -279,7 +321,7 @@ function Bills() {
                       <label key={roommate.id} className="roommate-option">
                         <input
                           type="checkbox"
-                          checked={selectedRoommates.includes(roommate.id)}
+                          checked={selectedRoommates.includes(String(roommate.id))}
                           onChange={() => handleRoommateToggle(roommate.id)}
                           disabled={loading}
                         />
