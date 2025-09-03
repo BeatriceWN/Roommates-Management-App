@@ -24,3 +24,8 @@ export function DataProvider({ children }) {
 
   const markChoreComplete = (id) =>
     setChores(chores.map((c) => (c.id === id ? { ...c, completed: true } : c)));
+  const addBill = (name, amount, dueDate) =>
+    setBills([...bills, { id: crypto.randomUUID(), name, amount, dueDate, paid: false }]);
+
+  const markBillPaid = (id) =>
+    setBills(bills.map((b) => (b.id === id ? { ...b, paid: true } : b)));
