@@ -1,10 +1,5 @@
 import { useEffect, useState } from "react";
 
-function Bills() {
-  const [bills, setBills] = useState([]);
-  const [name, setName] = useState("");
-  const [amount, setAmount] = useState("");
-  const [dueDate, setDueDate] = useState("");
 
   useEffect(() => {
     fetch("http://localhost:4000/bills")
