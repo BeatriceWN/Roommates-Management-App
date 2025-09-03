@@ -41,7 +41,17 @@ function Bills() {
       );
   };
 
-
+  return (
+    <div>
+      <h2>Bills</h2>
+      <form onSubmit={addBill}>
+        <input
+          type="text"
+          placeholder="Bill name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
         <input
           type="number"
           placeholder="Amount"
