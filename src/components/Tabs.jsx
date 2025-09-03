@@ -8,3 +8,8 @@ export default function Tabs({ activeTab, setActiveTab }) {
     { name: "calendar", icon: "fa-calendar", label: "Calendar" },
     { name: "roommates", icon: "fa-users", label: "Roommates" },
   ];
+  return (
+    <div className="tab-navigation">
+      {tabs.map((tab) => (
+        <button
+          key={tab.name}
