@@ -90,3 +90,12 @@ header h1 { font-size: 1.9rem; letter-spacing: 0.2px; }
 /* Tab content */
 .tab-content { display: none; }
 .tab-content.active { display: block; }
+
+
+/* Grid layout for dashboard modules */
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
