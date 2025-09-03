@@ -7,7 +7,7 @@ function Chores() {
 
   // Fetch chores
   useEffect(() => {
-    fetch("http://localhost:4000/chores")
+    fetch("http://localhost:3000/chores")
       .then((res) => res.json())
       .then((data) => setChores(data));
   }, []);
@@ -17,7 +17,7 @@ function Chores() {
     e.preventDefault();
     const newChore = { name, assignedTo, completed: false };
 
-    fetch("http://localhost:4000/chores", {
+    fetch("http://localhost:3000/chores", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newChore),
@@ -31,7 +31,7 @@ function Chores() {
 
   // Mark complete
   const toggleComplete = (id, completed) => {
-    fetch(`http://localhost:4000/chores/${id}`, {
+    fetch(`http://localhost:3000/chores/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ completed: !completed }),
