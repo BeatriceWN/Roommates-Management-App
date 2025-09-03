@@ -33,3 +33,16 @@ export function DataProvider({ children }) {
     setEvents([...events, { id: crypto.randomUUID(), title, date }]);
   const addRoommate = (name, email, phone) =>
     setRoommates([...roommates, { id: crypto.randomUUID(), name, email, phone }]);
+  return (
+    <DataContext.Provider
+      value={{
+        chores, bills, events, roommates,
+        addChore, markChoreComplete,
+        addBill, markBillPaid,
+        addEvent, addRoommate
+      }}
+    >
+      {children}
+    </DataContext.Provider>
+  );
+}
