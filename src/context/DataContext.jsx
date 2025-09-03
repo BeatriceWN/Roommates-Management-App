@@ -31,3 +31,5 @@ export function DataProvider({ children }) {
     setBills(bills.map((b) => (b.id === id ? { ...b, paid: true } : b)));
   const addEvent = (title, date) =>
     setEvents([...events, { id: crypto.randomUUID(), title, date }]);
+  const addRoommate = (name, email, phone) =>
+    setRoommates([...roommates, { id: crypto.randomUUID(), name, email, phone }]);
