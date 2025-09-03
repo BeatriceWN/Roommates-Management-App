@@ -6,3 +6,11 @@ export default function Bills() {
   const [name, setName] = useState("");
   const [amount, setAmount] = useState("");
   const [dueDate, setDueDate] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!name || !amount || !dueDate) return;
+    addBill(name, parseFloat(amount), dueDate);
+    setName("");
+    setAmount("");
+    setDueDate("");
+  };
