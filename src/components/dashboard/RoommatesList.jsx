@@ -11,3 +11,20 @@ function Roommates() {
       .then(res => res.json())
       .then(data => setRoommates(data));
   }, []);
+
+  const addRoommate = (e) => {
+    e.preventDefault();
+    const newRoommate = { name, email, phone };
+
+    fetch("http://localhost:3000/roommates", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newRoommate)
+    })
+      .then(res => res.json())
+      .then(data => setRoommates([...roommates, data]));
+
+    setName("");
+    setEmail("");
+    setPhone("");
+  };
