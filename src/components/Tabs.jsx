@@ -13,3 +13,12 @@ export default function Tabs({ activeTab, setActiveTab }) {
       {tabs.map((tab) => (
         <button
           key={tab.name}
+          className={tab-btn ${activeTab === tab.name ? "active" : ""}}
+          onClick={() => setActiveTab(tab.name)}
+        >
+          <i className={fas ${tab.icon}}></i> {tab.label}
+        </button>
+      ))}
+    </div>
+  );
+}
