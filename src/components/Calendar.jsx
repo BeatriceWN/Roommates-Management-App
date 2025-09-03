@@ -5,7 +5,15 @@ function Calendar() {
   const [date, setDate] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:4000/events")
+    fetch("http://localhost:3000/events")
       .then(res => res.json())
       .then(data => setEvents(data));
   }, []);
+  const addEvent = (e) => {
+    e.preventDefault();
+    const newEvent = { title, date };
+ fetch("http://localhost:3000/events", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newEvent)
+    })
