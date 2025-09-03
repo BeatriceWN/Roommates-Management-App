@@ -99,3 +99,12 @@ header h1 { font-size: 1.9rem; letter-spacing: 0.2px; }
   gap: 18px;
 }
 
+
+/* Generic module/card */
+.module {
+  background: #f8f9fb;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(40,44,63,0.04);
+}
+
