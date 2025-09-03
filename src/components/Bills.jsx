@@ -7,7 +7,7 @@ function Bills() {
   const [dueDate, setDueDate] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:4000/bills")
+    fetch("http://localhost:3000/bills")
       .then(res => res.json())
       .then(data => setBills(data));
   }, []);
@@ -16,7 +16,7 @@ function Bills() {
     e.preventDefault();
     const newBill = { name, amount: Number(amount), dueDate, paid: false };
 
-    fetch("http://localhost:4000/bills", {
+    fetch("http://localhost:3000/bills", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newBill)
@@ -30,7 +30,7 @@ function Bills() {
   };
 
   const markPaid = (id, paid) => {
-    fetch(`http://localhost:4000/bills/${id}`, {
+    fetch(`http://localhost:3000/bills/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ paid: !paid })
