@@ -12,4 +12,19 @@ function Chores() {
       .then(data => setChores(data));
   }, []);
 
-  
+    // Add new chore
+  const addChore = (e) => {
+    e.preventDefault();
+    const newChore = { name, assignedTo, completed: false };
+
+    fetch("http://localhost:4000/chores", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newChore)
+    })
+      .then(res => res.json())
+      .then(data => setChores([...chores, data]));
+
+    setName("");
+    setAssignedTo("");
+  };
