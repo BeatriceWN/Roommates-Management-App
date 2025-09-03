@@ -14,3 +14,10 @@ export default function Bills() {
     setAmount("");
     setDueDate("");
   };
+   return (
+    <div className="tab-content">
+      <h2>Bills</h2>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Bill name"
