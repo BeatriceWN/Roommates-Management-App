@@ -8,11 +8,11 @@ function Chores() {
   // Fetch chores
   useEffect(() => {
     fetch("http://localhost:4000/chores")
-      .then(res => res.json())
-      .then(data => setChores(data));
+      .then((res) => res.json())
+      .then((data) => setChores(data));
   }, []);
 
-    // Add new chore
+  // Add new chore
   const addChore = (e) => {
     e.preventDefault();
     const newChore = { name, assignedTo, completed: false };
@@ -20,27 +20,28 @@ function Chores() {
     fetch("http://localhost:4000/chores", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newChore)
+      body: JSON.stringify(newChore),
     })
-      .then(res => res.json())
-      .then(data => setChores([...chores, data]));
+      .then((res) => res.json())
+      .then((data) => setChores([...chores, data]));
 
     setName("");
     setAssignedTo("");
   };
 
-   // Mark complete
-   const toggleComplete = (id, completed) => {
-    fetch(http://localhost:4000/chores/${id}, {
+  // Mark complete
+  const toggleComplete = (id, completed) => {
+    fetch(`http://localhost:4000/chores/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ completed: !completed })
+      body: JSON.stringify({ completed: !completed }),
     })
-      .then(res => res.json())
-      .then(updated =>
-        setChores(chores.map(chore => (chore.id === id ? updated : chore)))
+      .then((res) => res.json())
+      .then((updated) =>
+        setChores(chores.map((chore) => (chore.id === id ? updated : chore)))
       );
   };
+
   return (
     <div>
       <h2>🧹 Chores</h2>
@@ -63,11 +64,11 @@ function Chores() {
       </form>
 
       <ul>
-        {chores.map(chore => (
+        {chores.map((chore) => (
           <li key={chore.id}>
-            {chore.name} — {chore.assignedTo}  
+            {chore.name} — {chore.assignedTo}
             <button onClick={() => toggleComplete(chore.id, chore.completed)}>
-              {chore.completed ? "Done" : " Pending"}
+              {chore.completed ? "✅ Done" : "⏳ Pending"}
             </button>
           </li>
         ))}
