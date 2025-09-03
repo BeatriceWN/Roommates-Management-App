@@ -20,6 +20,13 @@ export default function Notifications() {
         ))}
         {pendingChores.map((c) => (
           <li key={c.id}>:broom: Pending chore: {c.name}</li>
+          ))}
+        {todayEvents.map((e) => (
+          <li key={e.id}>:date: Event today: {e.title}</li>
+        ))}
+        {dueBills.length === 0 &&
+          pendingChores.length === 0 &&
+          todayEvents.length === 0 && <li>No notifications</li>}
         
       </ul>
     </div>
