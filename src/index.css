@@ -37,3 +37,13 @@ header h1 { font-size: 1.9rem; letter-spacing: 0.2px; }
 
 /* Content wrapper */
 .content { padding: 20px; }
+
+/* Tabs */
+.tab-navigation {
+  display: flex;
+  gap: 8px;
+  background: #f1f3f7;
+  border-radius: 8px;
+  padding: 6px;
+  margin-bottom: 18px;
+}
