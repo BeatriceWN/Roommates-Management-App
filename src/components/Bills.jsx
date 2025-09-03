@@ -29,7 +29,17 @@ function Bills() {
     setDueDate("");
   };
 
- 
+  const markPaid = (id, paid) => {
+    fetch(`http://localhost:4000/bills/${id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ paid: !paid })
+    })
+      .then(res => res.json())
+      .then(updated =>
+        setBills(bills.map(bill => (bill.id === id ? updated : bill)))
+      );
+  };
 
   return (
     <div>
