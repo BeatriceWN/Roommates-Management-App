@@ -215,3 +215,14 @@ ul { list-style: none; padding-left: 0; margin: 0; }
 }
 .notifications h3 { color: #e6b400; margin-bottom: 8px; }
 
+/* Responsive */
+@media (max-width: 900px) {
+  .dashboard { grid-template-columns: 1fr; }
+  .summary-cards { grid-template-columns: 1fr; }
+  .roommate-grid { grid-template-columns: 1fr; }
+  .tab-navigation { flex-direction: column; }
+}
+
+/* Small tweaks for accessibility */
+button:focus, input:focus, select:focus { box-shadow: 0 0 0 3px rgba(74,105,189,0.12); outline: none; }
+
