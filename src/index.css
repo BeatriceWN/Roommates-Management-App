@@ -108,3 +108,11 @@ header h1 { font-size: 1.9rem; letter-spacing: 0.2px; }
   box-shadow: 0 6px 16px rgba(40,44,63,0.04);
 }
 
+
+/* Summary cards area */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
