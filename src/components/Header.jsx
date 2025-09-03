@@ -1,2 +1,4 @@
 export default function Header() {
-  return 
+  return (
+      <header>
+      <h1>Roommate Manager</h1>
