@@ -17,3 +17,9 @@ function Calendar() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newEvent)
     })
+.then(res => res.json())
+      .then(data => setEvents([...events, data]));
+
+    setTitle("");
+    setDate("");
+  };
