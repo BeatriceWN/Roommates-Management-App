@@ -34,4 +34,21 @@ export default function Bills() {
           type="date"
           value={dueDate}
           onChange={(e) => setDueDate(e.target.value)}
-        />
+        /> <button type="submit">Add Bill</button>
+      </form>
+
+  <ul>
+    {bills.map((bill) => (
+      <li key={bill.id}>
+        <strong>{bill.name}</strong> - ${bill.amount} (Due {bill.dueDate}){" "}
+        {bill.paid ? (
+          <span>:white_check_mark: Paid</span>
+        ) : (
+          <button onClick={() => markBillPaid(bill.id)}>Mark Paid</button>
+        )}
+      </li>
+    ))}
+  </ul>
+</div>
+  );
+}
