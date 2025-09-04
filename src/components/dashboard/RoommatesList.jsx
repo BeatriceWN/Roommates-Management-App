@@ -1,71 +1,40 @@
-import { useEffect, useState } from "react";
+import { useData } from "../../context/DataContext";
 
-function Roommates() {
-  const [roommates, setRoommates] = useState([]);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+export default function RoommatesList() {
+  const { roommates } = useData();
 
-  useEffect(() => {
-    fetch("http://localhost:3000/roommates")
-      .then(res => res.json())
-      .then(data => setRoommates(data));
-  }, []);
-
-  const addRoommate = (e) => {
-    e.preventDefault();
-    const newRoommate = { name, email, phone };
-
-    fetch("http://localhost:3000/roommates", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newRoommate)
-    })
-      .then(res => res.json())
-      .then(data => setRoommates([...roommates, data]));
-
-    setName("");
-    setEmail("");
-    setPhone("");
-  };
-
-   return (
-    <div>
-      <h2>👥 Roommates</h2>
-      <form onSubmit={addRoommate}>
-        <input
-          type="text"
-          placeholder="Full name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          type="tel"
-          placeholder="Phone"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-          required
-        />
-        <button type="submit">Add Roommate</button>
-      </form>
-
-      <ul>
-        {roommates.map(r => (
-          <li key={r.id}>
-            {r.name} — {r.email} — {r.phone}
-          </li>
+  return (
+    <div className="recent-section">
+      <h3>
+        <i className="fas fa-users"></i>
+        Roommates
+      </h3>
+      <div className="roommate-grid">
+        {roommates.length === 0 && (
+          <div className="roommate-card">
+            <div className="user-avatar">
+              <i className="fas fa-user-plus"></i>
+            </div>
+            <h3>Add Roommates</h3>
+            <p className="text-muted">No roommates added yet</p>
+          </div>
+        )}
+        {roommates.map((roommate) => (
+          <div key={roommate.id} className="roommate-card">
+            <div className="user-avatar">
+              <i className="fas fa-user"></i>
+            </div>
+            <h3>{roommate.name}</h3>
+            <p className="text-muted">{roommate.email}</p>
+            <div className="roommate-stats">
+              <div className="stat">
+                <i className="fas fa-tasks"></i>
+                <span>Active</span>
+              </div>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
-
-export default Roommates;
